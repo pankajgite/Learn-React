@@ -1,1076 +1,680 @@
-# 30-Day JavaScript + React Learning Plan
-
-A practical 30-day roadmap covering JavaScript, React, API integration,
-authentication, state management, advanced React, and interview
-preparation.
-
-The plan uses a real full-stack application for practical work.
-
-------------------------------------------------------------------------
-
-## Learning Flow
-
-``` text
-Learn Concept
-     ↓
-Understand Why
-     ↓
-Write Code
-     ↓
-Practice Exercise
-     ↓
-Apply to Project
-     ↓
-Interview Questions
-     ↓
-Quiz / Revision
-     ↓
-Next Day
-```
-
-------------------------------------------------------------------------
-
-## 30-Day Progress
-
-  Day   Topic                                Status
-  ----- ------------------------------------ --------
-  01    JavaScript Basics                    ⬜
-  02    Functions + Scope                    ⬜
-  03    Arrays                               ⬜
-  04    Objects                              ⬜
-  05    Modern JavaScript Syntax             ⬜
-  06    Array Methods                        ⬜
-  07    Async JavaScript                     ⬜
-  08    React Setup + JSX                    ⬜
-  09    React Components                     ⬜
-  10    Props                                ⬜
-  11    State + useState                     ⬜
-  12    Events + Rendering                   ⬜
-  13    Forms                                ⬜
-  14    React + REST APIs                    ⬜
-  15    useEffect                            ⬜
-  16    useRef + useContext                  ⬜
-  17    Custom Hooks                         ⬜
-  18    React Router                         ⬜
-  19    JWT Authentication                   ⬜
-  20    Protected Routes                     ⬜
-  21    Redux Toolkit                        ⬜
-  22    useMemo + useCallback + React.memo   ⬜
-  23    React Rendering + Virtual DOM        ⬜
-  24    Performance + Lazy Loading           ⬜
-  25    Error Handling                       ⬜
-  26    Search + Pagination + Filtering      ⬜
-  27    React Architecture                   ⬜
-  28    Project Completion                   ⬜
-  29    Interview Preparation                ⬜
-  30    Mock Interview                       ⬜
-
-------------------------------------------------------------------------
-
-# Week 1 --- JavaScript Fundamentals
-
-## Day 1 --- JavaScript Basics
-
-### Concepts
-
--   What is JavaScript?
--   Java vs JavaScript
--   How JavaScript runs
--   Variables
--   `var`
--   `let`
--   `const`
--   Data types
--   Strings
--   Numbers
--   Booleans
--   `null`
--   `undefined`
--   Operators
--   `if / else`
--   `switch`
--   `for`
--   `while`
-
-### Code Practice
-
--   Variables and data types
--   Conditions
--   Loops
--   Simple calculations
--   Basic data processing
+# JavaScript + React — 30 Day Plan
+
+## Progress
+
+| Day | Topic | Status |
+|---|---|---|
+| 1 | JavaScript Basics | ⬜ |
+| 2 | Functions & Scope | ⬜ |
+| 3 | Arrays | ⬜ |
+| 4 | Objects | ⬜ |
+| 5 | Modern JavaScript | ⬜ |
+| 6 | Array Methods | ⬜ |
+| 7 | Async JavaScript | ⬜ |
+| 8 | React + JSX | ⬜ |
+| 9 | Components | ⬜ |
+| 10 | Props | ⬜ |
+| 11 | State + useState | ⬜ |
+| 12 | Events & Rendering | ⬜ |
+| 13 | Forms | ⬜ |
+| 14 | REST API Integration | ⬜ |
+| 15 | useEffect | ⬜ |
+| 16 | useRef + useContext | ⬜ |
+| 17 | Custom Hooks | ⬜ |
+| 18 | React Router | ⬜ |
+| 19 | JWT Authentication | ⬜ |
+| 20 | Protected Routes | ⬜ |
+| 21 | Redux Toolkit | ⬜ |
+| 22 | Memoization | ⬜ |
+| 23 | React Rendering | ⬜ |
+| 24 | Performance | ⬜ |
+| 25 | Error Handling | ⬜ |
+| 26 | Search, Filter & Pagination | ⬜ |
+| 27 | React Architecture | ⬜ |
+| 28 | Project Integration | ⬜ |
+| 29 | Interview Preparation | ⬜ |
+| 30 | Full Mock Interview | ⬜ |
+
+---
+
+## Day 1 — JavaScript Basics
+
+**Learn**
+- Variables: `var`, `let`, `const`
+- Data types
+- Operators
+- Conditions
+- Loops
+
+**Practice**
+- Basic JavaScript programs
+- 5 coding exercises
+
+**Project**
+- Practice with user/post data
+
+**Interview**
+- `var` vs `let` vs `const`
+- `==` vs `===`
+- `null` vs `undefined`
+
+---
+
+## Day 2 — Functions & Scope
+
+**Learn**
+- Functions
+- Parameters and return values
+- Arrow functions
+- Scope
+- Callbacks
+
+**Practice**
+- Function-based problems
+- Arrow function exercises
+
+**Project**
+- Create reusable data-processing functions
+
+**Interview**
+- Function declaration vs expression
+- Arrow functions
+- Scope
+
+---
+
+## Day 3 — Arrays
+
+**Learn**
+- Array creation and indexing
+- `push`, `pop`, `shift`, `unshift`
+- `slice`, `splice`
+- Iteration
+
+**Practice**
+- Array coding problems
+
+**Project**
+- Manage users and posts using arrays
+
+**Interview**
+- `slice()` vs `splice()`
+- Array mutation
 
-### Project Practice
+---
 
-Create basic JavaScript data and operations for users, posts, and
-connections.
+## Day 4 — Objects
 
-### Interview Questions
+**Learn**
+- Objects and properties
+- Methods
+- Nested objects
+- Dot vs bracket notation
+- Optional chaining
 
--   What is JavaScript?
--   Java vs JavaScript?
--   `var` vs `let` vs `const`?
--   What are JavaScript data types?
--   `null` vs `undefined`?
--   What is type coercion?
--   What is `===` vs `==`?
+**Practice**
+- Object manipulation exercises
 
-### Revision
+**Project**
+- Create user, post and connection objects
 
--   Write variables without looking at examples.
--   Write conditions and loops independently.
+**Interview**
+- Object access
+- Nested objects
+- Optional chaining
 
-------------------------------------------------------------------------
+---
 
-## Day 2 --- Functions + Scope
+## Day 5 — Modern JavaScript
 
-### Concepts
+**Learn**
+- Destructuring
+- Spread/rest
+- Template literals
+- Default parameters
+- Property shorthand
 
--   Function declaration
--   Function expression
--   Parameters
--   Return values
--   Arrow functions
--   Scope
--   Block scope
--   Function scope
--   Callback introduction
+**Practice**
+- Modern JS exercises
 
-### Code Practice
+**Project**
+- Refactor project data using modern syntax
 
--   Create reusable functions
--   Functions with parameters
--   Functions returning objects
--   Arrow functions
+**Interview**
+- Spread vs rest
+- Destructuring
 
-### Project Practice
+---
 
-Create functions for finding users, creating posts, and checking
-connections.
+## Day 6 — Array Methods
 
-### Interview Questions
+**Learn**
+- `map`
+- `filter`
+- `reduce`
+- `find`
+- `findIndex`
+- `forEach`
+- `some` / `every`
 
--   Function declaration vs expression?
--   What is an arrow function?
--   Arrow function vs normal function?
--   What is scope?
--   What is block scope?
--   What is a callback?
+**Practice**
+- Array method problems
 
-### Revision
+**Project**
+- Filter posts, users and connections
 
-Write 5 functions without copying syntax.
+**Interview**
+- `map()` vs `forEach()`
+- `filter()` vs `find()`
+- `reduce()`
 
-------------------------------------------------------------------------
+---
 
-## Day 3 --- Arrays
+## Day 7 — Async JavaScript
 
-### Concepts
+**Learn**
+- Synchronous vs asynchronous JS
+- Promises
+- `async/await`
+- `try/catch`
+- Fetch API
+- JSON
+- `import/export`
 
--   Array creation
--   Indexing
--   Updating elements
--   `push`
--   `pop`
--   `shift`
--   `unshift`
--   `slice`
--   `splice`
--   `length`
--   Iterating arrays
+**Practice**
+- Fetch data from an API
 
-### Code Practice
+**Project**
+- Fetch and display backend data
 
-Create and modify arrays of users, posts, and connections.
+**Interview**
+- Promise states
+- `async/await`
+- Fetch API
 
-### Project Practice
+---
 
-Create sample user/post/connection collections.
+## Day 8 — React + JSX
 
-### Interview Questions
+**Learn**
+- React basics
+- SPA concept
+- Vite
+- JSX
+- Expressions
+- Fragments
 
--   What is an array?
--   `slice()` vs `splice()`?
--   Which array methods mutate the array?
--   How do you copy an array?
+**Practice**
+- Create first React app
 
-### Revision
+**Project**
+- Set up LinkedIn frontend
 
-Practice array operations without looking at documentation.
+**Interview**
+- What is React?
+- JSX
+- SPA
 
-------------------------------------------------------------------------
+---
 
-## Day 4 --- Objects
+## Day 9 — Components
 
-### Concepts
+**Learn**
+- Functional components
+- Component composition
+- Reusable components
 
--   Objects
--   Properties
--   Methods
--   Nested objects
--   Dot notation
--   Bracket notation
--   Optional chaining basics
+**Practice**
+- Build small components
 
-### Code Practice
+**Project**
+- Navbar, Sidebar, PostCard
 
-Create objects representing:
+**Interview**
+- Component
+- Functional vs class components
 
--   User
--   Post
--   Connection
--   Comment
+---
 
-### Project Practice
+## Day 10 — Props
 
-Create objects similar to backend DTO responses.
+**Learn**
+- Props
+- Props destructuring
+- `children`
+- Parent-to-child communication
 
-### Interview Questions
+**Practice**
+- Pass data between components
 
--   What is an object?
--   Object vs array?
--   Dot vs bracket notation?
--   How do you access nested properties?
--   What is optional chaining?
+**Project**
+- Pass user/post data to components
 
-### Revision
+**Interview**
+- Props vs state
+- `children`
 
-Create and modify nested objects.
+---
 
-------------------------------------------------------------------------
+## Day 11 — State + useState
 
-## Day 5 --- Modern JavaScript Syntax
+**Learn**
+- State
+- `useState`
+- State updates
+- Rerendering
 
-### Concepts
+**Practice**
+- Counter and form examples
 
--   Object destructuring
--   Array destructuring
--   Spread operator
--   Rest operator
--   Template literals
--   Default parameters
--   Property shorthand
+**Project**
+- Like button and profile state
 
-### Code Practice
+**Interview**
+- State vs props
+- Why state causes rerender
 
--   Extract object properties
--   Copy objects
--   Copy arrays
--   Update objects immutably
--   Build dynamic strings
+---
 
-### Project Practice
+## Day 12 — Events & Rendering
 
-Update user/post objects without directly modifying the original object.
+**Learn**
+- Click/change/submit events
+- Conditional rendering
+- List rendering
+- Keys
 
-### Interview Questions
+**Practice**
+- Interactive components
 
--   What is destructuring?
--   Spread vs rest operator?
--   What are template literals?
--   What is immutability?
+**Project**
+- Like, comment and follow actions
 
-### Revision
+**Interview**
+- Event handling
+- Keys in React
 
-Practice destructuring and spread syntax.
+---
 
-------------------------------------------------------------------------
+## Day 13 — Forms
 
-## Day 6 --- Array Methods
+**Learn**
+- Controlled components
+- Form state
+- Submit handling
+- Validation
 
-### Concepts
+**Practice**
+- Login and registration forms
 
--   `map`
--   `filter`
--   `reduce`
--   `find`
--   `findIndex`
--   `forEach`
--   `some`
--   `every`
+**Project**
+- Login form
 
-### Code Practice
+**Interview**
+- Controlled vs uncontrolled components
 
-Process arrays of users and posts.
+---
 
-### Project Practice
+## Day 14 — REST API Integration
 
--   Find users
--   Filter connections
--   Transform posts
--   Calculate likes
--   Find popular posts
+**Learn**
+- Fetch/Axios
+- GET, POST, PUT, DELETE
+- Headers
+- Status codes
+- CORS
+- Loading/error states
 
-### Java Comparison
+**Practice**
+- Connect React to REST APIs
 
-``` text
-Java Stream.map()     → JavaScript map()
-Java Stream.filter()  → JavaScript filter()
-Java Stream.reduce()  → JavaScript reduce()
-forEach()             → forEach()
-```
+**Project**
+- Connect existing Spring Boot backend
 
-### Interview Questions
+**Interview**
+- REST API integration
+- CORS
+- HTTP status codes
 
--   `map()` vs `forEach()`?
--   `map()` vs `filter()`?
--   What does `reduce()` do?
--   `find()` vs `filter()`?
--   How is Java Stream API similar to JavaScript array methods?
+---
 
-### Revision
+## Day 15 — useEffect
 
-Solve at least 5 array-method problems.
+**Learn**
+- Effects
+- Dependency array
+- Cleanup
+- Initial render
+- Reruns
 
-------------------------------------------------------------------------
+**Practice**
+- API calls with `useEffect`
 
-## Day 7 --- Async JavaScript
+**Project**
+- Load posts and profile data
 
-### Concepts
+**Interview**
+- `useEffect`
+- Dependency array
+- Infinite loops
 
--   Synchronous vs asynchronous
--   Callbacks
--   Promises
--   Promise states
--   `async`
--   `await`
--   `try/catch`
--   Fetch API
--   JSON
--   `import`
--   `export`
+---
 
-### Code Practice
+## Day 16 — useRef + useContext
 
-Call a public/test API and process the response.
+**Learn**
+- `useRef`
+- Mutable values
+- Context API
+- Provider/consumer
 
-### Project Practice
+**Practice**
+- Ref and context examples
 
-Call an existing backend endpoint and display/process the response.
+**Project**
+- Global user/auth context
 
-### Interview Questions
+**Interview**
+- `useRef` vs state
+- Context API
 
--   What is a Promise?
--   Promise states?
--   `async/await`?
--   `async/await` vs Promise `.then()`?
--   How do you handle async errors?
--   What is Fetch API?
+---
 
-### Revision
+## Day 17 — Custom Hooks
 
-Write one complete async API call independently.
+**Learn**
+- Custom hook rules
+- Reusable logic
+- Hook composition
 
-------------------------------------------------------------------------
+**Practice**
+- Create custom hooks
 
-# Week 2 --- React Fundamentals
+**Project**
+- `useAuth`, `usePosts`, `useConnections`
 
-## Day 8 --- React Setup + JSX
+**Interview**
+- What are custom hooks?
+- Rules of Hooks
 
-### Concepts
+---
 
--   What is React?
--   SPA
--   React project structure
--   Vite
--   JSX
--   Expressions
--   Fragments
+## Day 18 — React Router
 
-### Code Practice
+**Learn**
+- Routes
+- `Link`
+- `useNavigate`
+- Route parameters
+- Nested routes
 
-Create a React project and render basic components.
+**Practice**
+- Multi-page React app
 
-### Project Practice
+**Project**
+- Home, Profile, Post, Connections pages
 
-Create the frontend structure for the application.
+**Interview**
+- Client-side routing
+- `Link` vs `useNavigate`
 
-### Interview Questions
+---
 
--   What is React?
--   Why React?
--   What is JSX?
--   JSX vs HTML?
--   What is an SPA?
--   Why use Vite?
+## Day 19 — JWT Authentication
 
-------------------------------------------------------------------------
+**Learn**
+- Login flow
+- JWT
+- Access token
+- Authorization header
+- Token persistence
 
-## Day 9 --- Components
+**Practice**
+- JWT login integration
 
-### Concepts
+**Project**
+- Connect React login to Spring Security
 
--   Functional components
--   Component composition
--   Reusable components
--   Component responsibility
+**Interview**
+- JWT flow
+- Access vs refresh token
+- Authorization header
 
-### Code Practice
+---
 
-Create reusable components.
+## Day 20 — Protected Routes
 
-### Project Practice
+**Learn**
+- Route guards
+- Authentication state
+- Logout
+- Unauthorized handling
 
-Build:
+**Practice**
+- Protected pages
 
--   Navbar
--   ProfileCard
--   PostCard
--   ConnectionCard
+**Project**
+- Protect profile and connections pages
 
-### Interview Questions
+**Interview**
+- Protected routes
+- Authentication vs authorization
 
--   What is a component?
--   Why use components?
--   Functional vs class components?
--   What is component composition?
+---
 
-------------------------------------------------------------------------
+## Day 21 — Redux Toolkit
 
-## Day 10 --- Props
+**Learn**
+- Store
+- Slice
+- Actions
+- Reducers
+- Dispatch
+- Selectors
 
-### Concepts
+**Practice**
+- Create a small Redux store
 
--   Props
--   Props destructuring
--   `children`
--   Parent-to-child communication
+**Project**
+- Global application state
 
-### Code Practice
+**Interview**
+- Context vs Redux
+- Redux Toolkit
 
-Pass different data to reusable components.
+---
 
-### Project Practice
+## Day 22 — Memoization
 
-Pass user, post, and connection data to components.
+**Learn**
+- `useMemo`
+- `useCallback`
+- `React.memo`
+- Memoization
 
-### Interview Questions
+**Practice**
+- Optimize rerenders
 
--   What are props?
--   Props vs state?
--   Can a child modify props?
--   What is `children`?
--   How does parent-to-child communication work?
+**Project**
+- Optimize post/feed components
 
-------------------------------------------------------------------------
+**Interview**
+- `useMemo` vs `useCallback`
+- `React.memo`
 
-## Day 11 --- State + useState
+---
 
-### Concepts
+## Day 23 — React Rendering
 
--   State
--   `useState`
--   State setter
--   Re-rendering
--   State vs props
+**Learn**
+- Virtual DOM
+- Reconciliation
+- Render cycle
+- Keys
+- Rerendering
 
-### Code Practice
+**Practice**
+- Analyze component rerenders
 
-Build counters, toggles, and interactive components.
+**Project**
+- Debug unnecessary rerenders
 
-### Project Practice
+**Interview**
+- Virtual DOM
+- Reconciliation
+- Rerender triggers
 
-Implement interactive post/connection UI.
+---
 
-### Interview Questions
+## Day 24 — Performance
 
--   What is state?
--   What is `useState`?
--   Why shouldn't state be modified directly?
--   What causes a component to re-render?
--   Props vs state?
+**Learn**
+- Lazy loading
+- Suspense
+- Code splitting
+- Debouncing
+- Throttling
+- Pagination
 
-------------------------------------------------------------------------
+**Practice**
+- Implement debounce and pagination
 
-## Day 12 --- Events + Rendering
+**Project**
+- Optimize search/feed
 
-### Concepts
+**Interview**
+- Debouncing vs throttling
+- Lazy loading
 
--   Click events
--   Change events
--   Submit events
--   Conditional rendering
--   List rendering
--   Keys
+---
 
-### Code Practice
+## Day 25 — Error Handling
 
-Create interactive lists and conditions.
+**Learn**
+- API errors
+- Loading states
+- Empty states
+- Error Boundaries
+- User-friendly errors
 
-### Project Practice
+**Practice**
+- Handle API failures
 
-Build feed and connection lists with loading/empty states.
+**Project**
+- Add error/loading/empty states
 
-### Interview Questions
+**Interview**
+- Error Boundaries
+- API error handling
 
--   How are events handled in React?
--   Why are keys required?
--   What is conditional rendering?
--   What happens when state changes?
+---
 
-------------------------------------------------------------------------
+## Day 26 — Search, Filter & Pagination
 
-## Day 13 --- Forms
+**Learn**
+- Query parameters
+- Search
+- Filtering
+- Sorting
+- Pagination
+- Debounced search
 
-### Concepts
+**Practice**
+- Build search and filter UI
 
--   Controlled components
--   Form state
--   Form submission
--   Validation
--   Input handling
+**Project**
+- Search users/posts and paginate results
 
-### Code Practice
+**Interview**
+- Client vs server-side pagination
+- Debouncing
 
-Create login and registration forms.
+---
 
-### Project Practice
+## Day 27 — React Architecture
 
-Build:
+**Learn**
+- Folder structure
+- Components
+- Pages
+- Services
+- Hooks
+- Context/store
+- Utils
 
--   Login form
--   Register form
--   Create-post form
+**Practice**
+- Organize the application
 
-### Interview Questions
+**Project**
+- Structure LinkedIn frontend
 
--   Controlled vs uncontrolled components?
--   How do you handle forms?
--   How do you validate forms?
--   How do you prevent default form submission?
+**Interview**
+- React project architecture
+- Reusable components
 
-------------------------------------------------------------------------
+---
 
-## Day 14 --- React + REST APIs
+## Day 28 — Project Integration
 
-### Concepts
+**Learn**
+- Integration
+- Debugging
+- Edge cases
+- Responsive UI
+- Cleanup
 
--   Axios
--   Fetch
--   GET
--   POST
--   PUT
--   DELETE
--   Headers
--   HTTP status codes
--   CORS
--   Loading states
--   Error states
+**Practice**
+- Test complete flows
 
-### Code Practice
+**Project**
+- Complete LinkedIn frontend integration
 
-Build API service functions.
+**Interview**
+- Explain frontend-backend architecture
+- Explain project flow
 
-### Project Practice
+---
 
-Connect React to the existing backend.
+## Day 29 — Interview Preparation
 
-### Interview Questions
+**Learn**
+- JavaScript interview topics
+- React interview topics
+- REST/API integration
+- Project discussion
 
--   How does React communicate with Spring Boot?
--   Axios vs Fetch?
--   What is CORS?
--   How do you handle API errors?
--   Where should API calls be placed?
+**Practice**
+- Coding questions
+- Project explanation
 
-------------------------------------------------------------------------
+**Project**
+- Prepare complete project walkthrough
 
-# Week 3 --- Hooks, Routing & Authentication
+**Interview**
+- JavaScript
+- React
+- Spring Boot + React
+- Project-based questions
 
-## Day 15 --- useEffect
+---
 
-### Concepts
+## Day 30 — Full Mock Interview
 
--   Effects
--   Dependency array
--   Cleanup
--   Initial render
--   Re-running effects
--   Infinite loops
+**Learn**
+- Final revision
 
-### Project Practice
+**Practice**
+- JavaScript coding
+- React questions
+- Debugging
+- Project discussion
 
-Fetch profile/feed data when pages load.
+**Project**
+- Full LinkedIn application walkthrough
 
-### Interview Questions
-
--   What is `useEffect`?
--   When does it execute?
--   What is the dependency array?
--   Why can `useEffect` cause infinite loops?
--   What is cleanup?
-
-------------------------------------------------------------------------
-
-## Day 16 --- useRef + useContext
-
-### Concepts
-
--   `useRef`
--   DOM references
--   Mutable values
--   `useContext`
--   Context Provider
--   Consuming context
-
-### Project Practice
-
-Create authentication/user context.
-
-### Interview Questions
-
--   `useRef` vs `useState`?
--   What is Context API?
--   When should Context be used?
--   Context vs Redux?
-
-------------------------------------------------------------------------
-
-## Day 17 --- Custom Hooks
-
-### Concepts
-
--   Custom hooks
--   Hook naming convention
--   Reusable logic
--   Separating UI and logic
-
-### Project Practice
-
-Create:
-
-``` text
-useAuth
-usePosts
-useConnections
-```
-
-### Interview Questions
-
--   What is a custom hook?
--   Why create custom hooks?
--   Rules of Hooks?
--   Can custom hooks use other hooks?
-
-------------------------------------------------------------------------
-
-## Day 18 --- React Router
-
-### Concepts
-
--   Routes
--   Route configuration
--   `Link`
--   `useNavigate`
--   Route parameters
--   Nested routes
-
-### Project Practice
-
-Create:
-
-``` text
-/login
-/register
-/feed
-/profile
-/connections
-/posts
-```
-
-### Interview Questions
-
--   What is React Router?
--   `Link` vs `useNavigate()`?
--   What are route parameters?
--   How do you create protected routes?
-
-------------------------------------------------------------------------
-
-## Day 19 --- JWT Authentication
-
-### Concepts
-
--   Login flow
--   JWT
--   Access token
--   Authorization header
--   Token persistence
--   Axios interceptor concept
-
-### Project Practice
-
-Connect React authentication to Spring Security/JWT.
-
-### Interview Questions
-
--   Explain JWT authentication flow.
--   Where is JWT sent?
--   Authentication vs authorization?
--   How does Spring Security validate JWT?
--   How does React know the user is authenticated?
-
-------------------------------------------------------------------------
-
-## Day 20 --- Protected Routes
-
-### Concepts
-
--   Route guards
--   Unauthorized handling
--   Logout
--   Authentication state
-
-### Project Practice
-
-Protect authenticated application pages.
-
-### Interview Questions
-
--   How do protected routes work?
--   How do you implement logout?
--   What happens when JWT expires?
--   How should unauthorized API responses be handled?
-
-------------------------------------------------------------------------
-
-## Day 21 --- Redux Toolkit
-
-### Concepts
-
--   Store
--   Slice
--   Action
--   Reducer
--   Dispatch
--   Selector
--   Redux Toolkit
--   When Redux is useful
-
-### Project Practice
-
-Implement suitable global state.
-
-### Interview Questions
-
--   Why Redux?
--   Context vs Redux?
--   What is a reducer?
--   What is a slice?
--   What is `dispatch()`?
--   What is `useSelector()`?
-
-------------------------------------------------------------------------
-
-# Week 4 --- Advanced React + Project
-
-## Day 22 --- Memoization
-
-### Concepts
-
--   `useMemo`
--   `useCallback`
--   `React.memo`
--   Re-render optimization
--   Memoization tradeoffs
-
-### Project Practice
-
-Optimize feed/connections where appropriate.
-
-### Interview Questions
-
--   `useMemo` vs `useCallback`?
--   What does `React.memo` do?
--   When should memoization be avoided?
-
-------------------------------------------------------------------------
-
-## Day 23 --- React Rendering
-
-### Concepts
-
--   Virtual DOM
--   Reconciliation
--   Render cycle
--   Keys
--   State updates
--   Re-renders
-
-### Project Practice
-
-Diagnose a rendering/re-rendering issue.
-
-### Interview Questions
-
--   What is Virtual DOM?
--   What is reconciliation?
--   What causes a re-render?
--   Why are keys important?
--   Does every re-render update the real DOM?
-
-------------------------------------------------------------------------
-
-## Day 24 --- Performance
-
-### Concepts
-
--   Lazy loading
--   `Suspense`
--   Code splitting
--   Debouncing
--   Throttling
--   Pagination
-
-### Project Practice
-
-Optimize search and non-critical pages.
-
-### Interview Questions
-
--   What is lazy loading?
--   What is code splitting?
--   Debouncing vs throttling?
--   How would you optimize a large list?
-
-------------------------------------------------------------------------
-
-## Day 25 --- Error Handling
-
-### Concepts
-
--   API errors
--   Loading states
--   Empty states
--   Error Boundaries
--   User-friendly error messages
-
-### Project Practice
-
-Add production-style error handling.
-
-### Interview Questions
-
--   How do you handle API errors?
--   What is an Error Boundary?
--   How do you handle loading/empty states?
--   Where should error handling happen?
-
-------------------------------------------------------------------------
-
-## Day 26 --- Search + Pagination + Filtering
-
-### Concepts
-
--   Search
--   Query parameters
--   Filtering
--   Sorting
--   Pagination
--   Debouncing
-
-### Project Practice
-
-Implement search/feed pagination using backend APIs.
-
-### Interview Questions
-
--   Client-side vs server-side pagination?
--   How does debounced search work?
--   How do you pass filters to a REST API?
--   How would you optimize a search API?
-
-------------------------------------------------------------------------
-
-## Day 27 --- React Architecture
-
-### Concepts
-
--   Folder structure
--   Components
--   Pages
--   Services
--   Hooks
--   Context
--   Store
--   Utilities
--   Reusable components
-
-### Code Practice
-
-Refactor code into a clean structure.
-
-### Project Practice
-
-Create an interview-ready frontend architecture.
-
-### Interview Questions
-
--   How would you structure a React application?
--   Where should API calls live?
--   Where should reusable logic live?
--   When should state be local vs global?
-
-------------------------------------------------------------------------
-
-## Day 28 --- Project Completion
-
-### Concepts
-
--   Integration
--   Debugging
--   Edge cases
--   Responsive UI
--   Reusable components
--   Code cleanup
-
-### Project Practice
-
-Complete the major application flows.
-
-### Interview Questions
-
-Be able to explain:
-
--   Architecture
--   Authentication
--   API integration
--   State management
--   Routing
--   Error handling
--   Performance decisions
-
-------------------------------------------------------------------------
-
-## Day 29 --- Interview Preparation
-
-### JavaScript
-
--   Variables
--   Scope
--   Functions
--   Arrays
--   Objects
--   Destructuring
--   Spread/rest
--   Array methods
--   Promises
--   Async/await
--   ES6+
-
-### React
-
--   Components
--   Props
--   State
--   Hooks
--   Context
--   Router
--   Redux
--   Rendering
--   Performance
-
-### Full Stack
-
--   React → Spring Boot
--   REST
--   JWT
--   CORS
--   Error handling
-
-### Project
-
-Practice explaining the complete application.
-
-------------------------------------------------------------------------
-
-## Day 30 --- Mock Interview
-
-### Round 1 --- JavaScript
-
-Theory + coding.
-
-### Round 2 --- React
-
-Theory + hooks.
-
-### Round 3 --- React Coding
-
-Small practical problem.
-
-### Round 4 --- Full Stack
-
-React + Spring Boot + JWT.
-
-### Round 5 --- Project Discussion
-
-Explain the application end-to-end.
-
-### Round 6 --- Follow-up Questions
-
-Deep questions based on project decisions.
-
-------------------------------------------------------------------------
-
-# Daily Completion Checklist
-
-For each day:
-
--   [ ] Concepts understood
--   [ ] Code examples written manually
--   [ ] Exercises completed
--   [ ] Project task completed
--   [ ] Interview questions answered
--   [ ] Quiz completed
--   [ ] Revision done
--   [ ] Code committed to Git
-
-------------------------------------------------------------------------
-
-# Suggested Git Commit Format
-
-``` text
-day-01: javascript basics
-day-02: functions and scope
-day-03: arrays
-day-04: objects
-...
-day-30: mock interview preparation
-```
-
-------------------------------------------------------------------------
-
-## Progress Log
-
-  Day   Date   Status   Code   Project   Interview   Revision
-  ----- ------ -------- ------ --------- ----------- ----------
-  01           ⬜       ⬜     ⬜        ⬜          ⬜
-  02           ⬜       ⬜     ⬜        ⬜          ⬜
-  03           ⬜       ⬜     ⬜        ⬜          ⬜
-  04           ⬜       ⬜     ⬜        ⬜          ⬜
-  05           ⬜       ⬜     ⬜        ⬜          ⬜
-  06           ⬜       ⬜     ⬜        ⬜          ⬜
-  07           ⬜       ⬜     ⬜        ⬜          ⬜
-  08           ⬜       ⬜     ⬜        ⬜          ⬜
-  09           ⬜       ⬜     ⬜        ⬜          ⬜
-  10           ⬜       ⬜     ⬜        ⬜          ⬜
-  11           ⬜       ⬜     ⬜        ⬜          ⬜
-  12           ⬜       ⬜     ⬜        ⬜          ⬜
-  13           ⬜       ⬜     ⬜        ⬜          ⬜
-  14           ⬜       ⬜     ⬜        ⬜          ⬜
-  15           ⬜       ⬜     ⬜        ⬜          ⬜
-  16           ⬜       ⬜     ⬜        ⬜          ⬜
-  17           ⬜       ⬜     ⬜        ⬜          ⬜
-  18           ⬜       ⬜     ⬜        ⬜          ⬜
-  19           ⬜       ⬜     ⬜        ⬜          ⬜
-  20           ⬜       ⬜     ⬜        ⬜          ⬜
-  21           ⬜       ⬜     ⬜        ⬜          ⬜
-  22           ⬜       ⬜     ⬜        ⬜          ⬜
-  23           ⬜       ⬜     ⬜        ⬜          ⬜
-  24           ⬜       ⬜     ⬜        ⬜          ⬜
-  25           ⬜       ⬜     ⬜        ⬜          ⬜
-  26           ⬜       ⬜     ⬜        ⬜          ⬜
-  27           ⬜       ⬜     ⬜        ⬜          ⬜
-  28           ⬜       ⬜     ⬜        ⬜          ⬜
-  29           ⬜       ⬜     ⬜        ⬜          ⬜
-  30           ⬜       ⬜     ⬜        ⬜          ⬜
+**Interview**
+- Technical interview
+- Coding round
+- React round
+- Spring Boot integration
+- Project discussion
