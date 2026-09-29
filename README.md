@@ -4,10 +4,10 @@
 
 | Day | Topic | Status |
 |---|---|---|
-| 1 | JavaScript Basics | ⬜ |
-| 2 | Functions & Scope | ⬜ |
-| 3 | Arrays | ⬜ |
-| 4 | Objects | ⬜ |
+| 1 | JavaScript Basics | ☑️ |
+| 2 | Functions & Scope | ☑️ |
+| 3 | Arrays | ☑️ |
+| 4 | Objects | ☑️ |
 | 5 | Modern JavaScript | ⬜ |
 | 6 | Array Methods | ⬜ |
 | 7 | Async JavaScript | ⬜ |
