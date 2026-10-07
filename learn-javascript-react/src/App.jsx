@@ -27,14 +27,31 @@ function Navbar(){
 }
 
 function UserCard({ name, role, exp }){
+  const [isOnline, setIsOnline] = useState(false);
+  const [isFollowing, setFollowing] = useState(false);
+  const [likes, setLike] =  useState(0);
+
  
   return(
     <div>
+      <hr />
       <ul>
         <li>Name: {name}</li>
         <li>Role: {role}</li>
         <li>Experience: {exp}</li>
+        <li>Status: {isOnline ? "Online" : "Offline"}</li>
+        <button onClick={() => setIsOnline(!isOnline)}>{isOnline ? "Go Offline" : "Go Online"}</button>
+        <li>{isFollowing ? "Following" : "Not Following"}</li>
+        <button onClick={() => setFollowing(!isFollowing) }>{isFollowing ? "Unfollow" : "Follow"}</button>
+
+        <li>Likes: {likes}</li>
+        <button onClick={() => setLike(likes + 1 )}>Like</button>
+        
+        
       </ul>
+      
+      
+      <hr />
     </div>
   )
 }
@@ -45,6 +62,41 @@ function Card({children}){
       {children}
     </div>
   )
+}
+
+
+function Buttons(){
+  const [count, setCount] = useState(5);
+  const [mood, setMood] = useState("Happy");  
+
+
+  function toggleMood() {
+    console.log("Updating mood");
+
+    if (mood === "Happy") {
+      setMood("Sad");
+    } else {
+      setMood("Happy");
+    }
+  }
+
+
+  return (
+    <div>
+      <h1>Like: {count}</h1>
+      <h2>Mood: {mood}</h2>
+
+      <button onClick={() => setCount(count + 1)}>
+        Like
+      </button>
+      <button onClick={() => setCount(count - 1)}>
+        Dislike
+      </button>
+      <br />
+
+      <button onClick={toggleMood}>Toggle Mood</button>
+    </div>
+  );
 }
 
 function App() {
@@ -58,6 +110,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Profile />
+      <Buttons />
       {users.map(user => (
           <UserCard
               key={user.id}
