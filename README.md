@@ -8,12 +8,12 @@
 | 2 | Functions & Scope | ☑️ |
 | 3 | Arrays | ☑️ |
 | 4 | Objects | ☑️ |
-| 5 | Modern JavaScript | ⬜ |
-| 6 | Array Methods | ⬜ |
-| 7 | Async JavaScript | ⬜ |
-| 8 | React + JSX | ⬜ |
-| 9 | Components | ⬜ |
-| 10 | Props | ⬜ |
+| 5 | Modern JavaScript | ☑️ |
+| 6 | Array Methods | ☑️ |
+| 7 | Async JavaScript | ☑️ |
+| 8 | React + JSX | ☑️ |
+| 9 | Components | ☑️ |
+| 10 | Props | ☑️ |
 | 11 | State + useState | ⬜ |
 | 12 | Events & Rendering | ⬜ |
 | 13 | Forms | ⬜ |
