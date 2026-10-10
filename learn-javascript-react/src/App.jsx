@@ -3,6 +3,7 @@ import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
+import LoginForm from './components/LoginForm2';
 
 // function Profile(){
 //     return(
@@ -200,42 +201,51 @@ return(
 
 }
 
+
+
 function App(){
-  const posts = [
-    {
-      id: 1,
-      name: "Pankaj",
-      role: "Java Developer",
-      content: "Learning React and JavaScript!",
-      likes: 5
-    },
-    {
-      id: 2,
-      name: "Rahul",
-      role: "Frontend Developer",
-      content: "Building my first React project.",
-      likes: 10
-    },
-    {
-      id: 3,
-      name: "Amit",
-      role: "Backend Developer",
-      content: "Exploring Spring Boot Microservices.",
-      likes: 8
-    }
-  ];
-
-return (
-  <div>
-    {
-      posts.map(po=> (
-        <PostCard key={po.id} name={po.name} role={po.role} content={po.content} likes={po.likes} />
-      ))
-    }
-  </div>
-
-)
+  return(
+    <LoginForm />
+  )
 }
+
+
+// function App(){
+//   const posts = [
+//     {
+//       id: 1,
+//       name: "Pankaj",
+//       role: "Java Developer",
+//       content: "Learning React and JavaScript!",
+//       likes: 5
+//     },
+//     {
+//       id: 2,
+//       name: "Rahul",
+//       role: "Frontend Developer",
+//       content: "Building my first React project.",
+//       likes: 10
+//     },
+//     {
+//       id: 3,
+//       name: "Amit",
+//       role: "Backend Developer",
+//       content: "Exploring Spring Boot Microservices.",
+//       likes: 8
+//     }
+//   ];
+
+// return (
+//   <div>
+//     {
+//       posts.map(po=> (
+//         <PostCard key={po.id} name={po.name} role={po.role} content={po.content} likes={po.likes} />
+//       ))
+//     }
+//   </div>
+
+// )
+// }
 
 
 
