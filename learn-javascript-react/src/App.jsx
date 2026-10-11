@@ -4,6 +4,11 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 import LoginForm from './components/LoginForm2';
+import GetStudentById from './components/FetchStudent';
+import GetAllStudents from './components/FetchAllStudents';
+import AddStudent from './components/AddStudent';
+import DeleteStudent from './components/DeleteStudent'
+import UpdateStudent from './components/UpdateStudent'
 
 // function Profile(){
 //     return(
@@ -205,7 +210,25 @@ return(
 
 function App(){
   return(
-    <LoginForm />
+    // <LoginForm />
+    <>
+    <div>
+      <GetStudentById />
+    </div>
+    <div style={{ padding: '20px' }}>
+      <GetAllStudents />
+    </div>
+
+    <div>
+      <AddStudent />
+    </div>
+    <div>
+      <DeleteStudent />
+    </div>
+    <div>
+      <UpdateStudent />
+    </div>
+    </>
   )
 }
 
