@@ -9,7 +9,21 @@ import GetAllStudents from './components/FetchAllStudents';
 import AddStudent from './components/AddStudent';
 import DeleteStudent from './components/DeleteStudent'
 import UpdateStudent from './components/UpdateStudent'
+import UserProfile from './components/UserProfile';
+import GetData from './components/GetData';
 
+
+
+
+
+// function App(){
+//   return (
+//     <>
+//       <GetData />
+//     </>
+
+//   )
+// }
 // function Profile(){
 //     return(
 //       <div>
@@ -227,6 +241,9 @@ function App(){
     </div>
     <div>
       <UpdateStudent />
+    </div>
+    <div>
+      <UserProfile />
     </div>
     </>
   )
