@@ -11,6 +11,7 @@ import DeleteStudent from './components/DeleteStudent'
 import UpdateStudent from './components/UpdateStudent'
 import UserProfile from './components/UserProfile';
 import GetData from './components/GetData';
+import UserDetails from'./components/UserDetails';
 
 
 
@@ -220,13 +221,22 @@ return(
 
 }
 
+function Timer() {
+    useEffect(() => {
+      const counter= setInterval(() => {
+            console.log("Timer running");
+        }, 1000);
+      return () => clearInterval(counter);
+    }, []);
 
+    return <h1>Timer</h1>;
+}
 
 function App(){
   return(
     // <LoginForm />
     <>
-    <div>
+    {/* <div>
       <GetStudentById />
     </div>
     <div style={{ padding: '20px' }}>
@@ -244,6 +254,12 @@ function App(){
     </div>
     <div>
       <UserProfile />
+    </div> */}
+    {/* <div>
+      <Timer />
+    </div> */}
+    <div>
+      <UserDetails />
     </div>
     </>
   )
