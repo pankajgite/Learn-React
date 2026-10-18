@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
@@ -12,9 +12,54 @@ import UpdateStudent from './components/UpdateStudent'
 import UserProfile from './components/UserProfile';
 import GetData from './components/GetData';
 import UserDetails from'./components/UserDetails';
+import Timer from './components/RefDemo';
 
 
+const UserContext = createContext();
 
+function App() {
+    const [user, setUser] = useState({
+        name: "Pankaj",
+        role: "Java Developer"
+    });
+
+    return (
+        <UserContext.Provider value={{ user, setUser }}>
+            <Navbar />
+            <Profile />
+            <Sidebar />
+        </UserContext.Provider>
+    );
+}
+
+function Navbar() {
+    const { user } = useContext(UserContext);
+
+    return <h2>Welcome {user.name}</h2>;
+}
+  
+
+function Profile() {
+    const { user } = useContext(UserContext);
+
+    return (
+        <div>
+            <h3>Name: {user.name}</h3>
+            <h3>Role: {user.role}</h3>
+        </div>
+    );
+}
+
+function Sidebar() {
+   const {user} = useContext(UserContext);
+
+   return(
+      <div>
+        <h3>Logged in as: {user.name}</h3>
+        <h3>Role: {user.role}</h3>
+      </div>
+   )
+}
 
 
 // function App(){
@@ -221,49 +266,52 @@ return(
 
 }
 
-function Timer() {
-    useEffect(() => {
-      const counter= setInterval(() => {
-            console.log("Timer running");
-        }, 1000);
-      return () => clearInterval(counter);
-    }, []);
+// function Timer() {
+//     useEffect(() => {
+//       const counter= setInterval(() => {
+//             console.log("Timer running");
+//         }, 1000);
+//       return () => clearInterval(counter);
+//     }, []);
 
-    return <h1>Timer</h1>;
-}
+//     return <h1>Timer</h1>;
+// }
 
-function App(){
-  return(
-    // <LoginForm />
-    <>
-    {/* <div>
-      <GetStudentById />
-    </div>
-    <div style={{ padding: '20px' }}>
-      <GetAllStudents />
-    </div>
+// function App(){
+//   return(
+//     // <LoginForm />
+//     <>
+//     <div>
+//       <GetStudentById />
+//     </div>
+//     <div style={{ padding: '20px' }}>
+//       <GetAllStudents />
+//     </div>
 
-    <div>
-      <AddStudent />
-    </div>
-    <div>
-      <DeleteStudent />
-    </div>
-    <div>
-      <UpdateStudent />
-    </div>
-    <div>
-      <UserProfile />
-    </div> */}
-    {/* <div>
-      <Timer />
-    </div> */}
-    <div>
-      <UserDetails />
-    </div>
-    </>
-  )
-}
+//     <div>
+//       <AddStudent />
+//     </div>
+//     <div>
+//       <DeleteStudent />
+//     </div>
+//     <div>
+//       <UpdateStudent />
+//     </div>
+//     <div>
+//       <UserProfile />
+//     </div>
+//     <div>
+//       <Timer />
+//     </div>
+//     <div>
+//       <UserDetails />
+//     </div> 
+//     <div>
+//       <Timer />
+//     </div>
+//     </>
+//   )
+// }
 
 
 // function App(){
