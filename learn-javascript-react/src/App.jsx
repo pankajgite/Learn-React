@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useState, useEffect } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
@@ -15,51 +15,189 @@ import UserDetails from'./components/UserDetails';
 import Timer from './components/RefDemo';
 
 
-const UserContext = createContext();
+function useFetch(url) {
+  const[loading, setLoading] = useState(false);
+  const[data,setData] = useState([]);
+  const [error, setError] = useState("");
 
-function App() {
-    const [user, setUser] = useState({
-        name: "Pankaj",
-        role: "Java Developer"
-    });
+  async function getData(){
+    setLoading(true);
+    setError("");
+    try{
+      
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP Error: ${response.status}`);
+      }
+      const d = await response.json();
+      setData(d)
 
-    return (
-        <UserContext.Provider value={{ user, setUser }}>
-            <Navbar />
-            <Profile />
-            <Sidebar />
-        </UserContext.Provider>
-    );
-}
+    }catch(e){
+      setError(e);
+    }finally{
+      setLoading(false);
+    }
+     
+  }
+  useEffect(()=>{
+    getData();
+  },[url])
 
-function Navbar() {
-    const { user } = useContext(UserContext);
-
-    return <h2>Welcome {user.name}</h2>;
-}
+  return{
+    data,
+    loading,
+    error
+  };
   
+}
 
-function Profile() {
-    const { user } = useContext(UserContext);
+function GetUsers(){
+  const url = "https://jsonplaceholder.typicode.com/users";
+  const {data, loading, error}= useFetch(url);
+
+  return(
+    <div>
+      <h2>Fetch Data</h2>
+
+            {loading && <p>Loading...</p>}
+
+            {error && <p>{error}</p>}
+
+            {!loading && !error && data.length === 0 && (
+                <p>No User found</p>
+            )}
+
+            {!loading && !error && data.length > 0 && (
+              data.map(user => (
+                <div key={user.id}>
+                  <hr/>
+                    <h3>Name: {user.name}</h3>
+                    <h4>Email: {user.email}</h4>
+                  
+                    <hr/>
+                </div>
+                
+            )))}
+            
+    </div>
+  )
+}
+function GetPosts() {
+    const url = "https://jsonplaceholder.typicode.com/posts";
+
+    const { data, loading, error } = useFetch(url);
 
     return (
         <div>
-            <h3>Name: {user.name}</h3>
-            <h3>Role: {user.role}</h3>
+            <h2>Fetch Data</h2>
+
+            {loading && <p>Loading...</p>}
+
+            {error && <p>{error}</p>}
+
+            {!loading && !error && data.length === 0 && (
+                <p>No posts found</p>
+            )}
+
+            {!loading && !error && data.length > 0 && (
+              data.map(post => (
+                <div key={post.id}>
+                    <h3>{post.title}</h3>
+                    <p>{post.body}</p>
+                </div>
+            )))}
         </div>
     );
 }
 
-function Sidebar() {
-   const {user} = useContext(UserContext);
+function useCounter(){
+  const [count, setCount] = useState(0);
 
-   return(
-      <div>
-        <h3>Logged in as: {user.name}</h3>
-        <h3>Role: {user.role}</h3>
-      </div>
-   )
+  function increase(){
+    setCount(prev => prev+1);
+  }
+  function decrease(){
+    setCount(prev => prev -1);
+  }
+
+  return{
+    count,
+    increase,
+    decrease
+  }
 }
+
+function Counter(){
+  const {count, increase, decrease} = useCounter();
+
+  return(
+    <div>
+      <h2>Count: {count}</h2>
+      <button onClick={increase}>Increase +</button>
+      <button onClick={decrease}>Descrease -</button>
+    </div>
+  )
+}
+
+function App(){
+  return(
+    <div>
+      <h1>Custom Hook Demo</h1>
+
+      <GetUsers />
+    </div>
+  )
+}
+
+
+
+
+
+// const UserContext = createContext();
+
+// function App() {
+//     const [user, setUser] = useState({
+//         name: "Pankaj",
+//         role: "Java Developer"
+//     });
+
+//     return (
+//         <UserContext.Provider value={{ user, setUser }}>
+//             <Navbar />
+//             <Profile />
+//             <Sidebar />
+//         </UserContext.Provider>
+//     );
+// }
+
+// function Navbar() {
+//     const { user } = useContext(UserContext);
+
+//     return <h2>Welcome {user.name}</h2>;
+// }
+  
+
+// function Profile() {
+//     const { user } = useContext(UserContext);
+
+//     return (
+//         <div>
+//             <h3>Name: {user.name}</h3>
+//             <h3>Role: {user.role}</h3>
+//         </div>
+//     );
+// }
+
+// function Sidebar() {
+//    const {user} = useContext(UserContext);
+
+//    return(
+//       <div>
+//         <h3>Logged in as: {user.name}</h3>
+//         <h3>Role: {user.role}</h3>
+//       </div>
+//    )
+// }
 
 
 // function App(){
