@@ -13,141 +13,376 @@ import UserProfile from './components/UserProfile';
 import GetData from './components/GetData';
 import UserDetails from'./components/UserDetails';
 import Timer from './components/RefDemo';
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+    NavLink,
+    useParams,
+    useNavigate,
+    useLocation, 
+    Outlet
+} from "react-router-dom";
 
 
-function useFetch(url) {
-  const[loading, setLoading] = useState(false);
-  const[data,setData] = useState([]);
-  const [error, setError] = useState("");
-
-  async function getData(){
-    setLoading(true);
-    setError("");
-    try{
-      
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`HTTP Error: ${response.status}`);
-      }
-      const d = await response.json();
-      setData(d)
-
-    }catch(e){
-      setError(e);
-    }finally{
-      setLoading(false);
-    }
-     
-  }
-  useEffect(()=>{
-    getData();
-  },[url])
-
-  return{
-    data,
-    loading,
-    error
-  };
-  
-}
-
-function GetUsers(){
-  const url = "https://jsonplaceholder.typicode.com/users";
-  const {data, loading, error}= useFetch(url);
-
+function App(){
   return(
-    <div>
-      <h2>Fetch Data</h2>
+    <BrowserRouter>
+    <Navbar />
+    <CurrentPage />
+      <Routes>
 
-            {loading && <p>Loading...</p>}
+                <Route path="/" element={<Home />} />
 
-            {error && <p>{error}</p>}
+                <Route
+                    path="/profile/:id"
+                    element={<Profile />}
+                />
+                <Route path="/profile/:id" element={<Profile />} />
 
-            {!loading && !error && data.length === 0 && (
-                <p>No User found</p>
-            )}
+                <Route
+                    path="/posts"
+                    element={<Posts />}
+                />
 
-            {!loading && !error && data.length > 0 && (
-              data.map(user => (
-                <div key={user.id}>
-                  <hr/>
-                    <h3>Name: {user.name}</h3>
-                    <h4>Email: {user.email}</h4>
-                  
-                    <hr/>
-                </div>
+                <Route
+                  path="/about"
+                  element={<About />}
+                />
+
+                <Route path="/contact"
+                  element={<Contact />}
+                />
+                <Route path="/login"
+                  element={<Login />}
+                />
+
+                <Route path="/dashboard" element={<DashboardLayout />}>
+                    <Route path="posts" element={<DashboardPosts />} />
+                    <Route path="setting" element={<DashboardSettings />} />
+                </Route>
+
                 
-            )))}
-            
-    </div>
+
+      </Routes>
+
+    </BrowserRouter>
   )
 }
-function GetPosts() {
-    const url = "https://jsonplaceholder.typicode.com/posts";
 
-    const { data, loading, error } = useFetch(url);
+function Home() {
+    return (<>
+      <h1>Home Page</h1>
+      
+      </>
+    );
+}
+
+function Profile() {
+    const { id } = useParams();
+    const [data, setData] = useState([]);
+    const location = useLocation();
+
+    async function fetchStudent(){
+      const url = `https://jsonplaceholder.typicode.com/users/${id}`;
+      try{
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`HTTP Error: ${response.status}`);
+        }
+        const d = await response.json();
+        console.log(location);
+        console.log(location.pathname);
+        setData(d)
+      }catch(e){
+        console.error(e);
+      }
+    } 
+
+    useEffect(()=>{
+      fetchStudent();
+    },[id])
 
     return (
         <div>
-            <h2>Fetch Data</h2>
-
-            {loading && <p>Loading...</p>}
-
-            {error && <p>{error}</p>}
-
-            {!loading && !error && data.length === 0 && (
-                <p>No posts found</p>
-            )}
-
-            {!loading && !error && data.length > 0 && (
-              data.map(post => (
-                <div key={post.id}>
-                    <h3>{post.title}</h3>
-                    <p>{post.body}</p>
-                </div>
-            )))}
+            <h1>Profile Page</h1>
+            <h2>Profile ID: {data.id}</h2>
+            <h2>Username: {data.username}</h2>
+            <h2>Name: {data.name}</h2>
+            <h2>Email: {data.email}</h2>
         </div>
     );
 }
 
-function useCounter(){
-  const [count, setCount] = useState(0);
-
-  function increase(){
-    setCount(prev => prev+1);
-  }
-  function decrease(){
-    setCount(prev => prev -1);
-  }
-
-  return{
-    count,
-    increase,
-    decrease
-  }
+function Posts() {
+    return <h1>Posts Page</h1>;
 }
 
-function Counter(){
-  const {count, increase, decrease} = useCounter();
+function About(){
+  return <h1>About Page</h1>;
+}
 
+function Contact() {
+    return <h1>Contact Page</h1>;
+}
+
+function Navbar() {
+    return (
+        <nav>
+            <NavLink to="/"
+              className={({ isActive }) =>
+                  isActive ? "active-link" : ""
+              }
+            >Home</NavLink>
+            <NavLink to="/profile"
+              className={({ isActive }) =>
+                  isActive ? "active-link" : ""
+              }
+            >Profile</NavLink>
+            <NavLink to="/posts"
+              className={({ isActive }) =>
+                  isActive ? "active-link" : ""
+              }
+            >Posts</NavLink>
+            <NavLink to="/about"
+              className={({ isActive }) =>
+                  isActive ? "active-link" : ""
+              }  
+            >About</NavLink>
+            <NavLink to="/contact"
+              className={({ isActive }) =>
+                  isActive ? "active-link" : ""
+              }
+            >Contact</NavLink>
+
+            <NavLink to="/login"
+              className={({isActive}) =>
+                isActive ? "active-link" : ""
+              }
+            >Login</NavLink>
+
+            <NavLink to="/dashboard"
+              className={({isActive}) =>
+                isActive ? "active-link" : ""
+              }
+            >Dashboard</NavLink>
+
+            
+        </nav>
+    );
+}
+
+function Login() {
+
+    const navigate = useNavigate();
+    const [data, setData] = useState({
+      username: "",
+      password: ""
+    });
+
+    function handleFormSubmit() {
+      event.preventDefault();
+        console.log("Login successful");
+        console.log(data.username);
+        console.log(data.password);
+        navigate("/profile/1");
+    }
+
+    return (
+        <div>
+            <h2>Login</h2>
+            <form onSubmit={handleFormSubmit}>
+              <input 
+                placeholder="Enter UserName" 
+                value={data.username } 
+                onChange={(event) => setData({ ...data, username: event.target.value })}
+              />
+
+              <input 
+                placeholder="Enter Password" 
+                value={data.password } 
+                onChange={(event) => setData({ ...data, password: event.target.value })}
+              />
+              <button type="submit">Login</button>
+            </form>
+            
+        </div>
+    );
+}
+
+function CurrentPage() {
+    const location = useLocation();
+
+    return (
+        <div>
+            <h3>Current Path: {location.pathname}</h3>
+        </div>
+    );
+}
+
+function DashboardLayout(){
   return(
     <div>
-      <h2>Count: {count}</h2>
-      <button onClick={increase}>Increase +</button>
-      <button onClick={decrease}>Descrease -</button>
-    </div>
+            <h1>Dashboard</h1>
+
+            <nav>
+                <NavLink to="posts" 
+                  className={({isActive}) =>
+                  isActive ? "active-link" : ""
+                }>Posts</NavLink>
+                
+                <NavLink to="setting"
+                 className={({isActive}) =>
+                  isActive ? "active-link" : ""
+                }>Settings</NavLink>
+            </nav>
+
+            <Outlet />
+        </div>
   )
 }
 
-function App(){
-  return(
-    <div>
-      <h1>Custom Hook Demo</h1>
-
-      <GetUsers />
-    </div>
-  )
+function DashboardPosts() {
+    return <h2> Dashboard Posts</h2>
 }
+
+function DashboardSettings() {
+    return <h2>Dashboard Setting</h2>
+}
+
+// function useFetch(url) {
+//   const[loading, setLoading] = useState(false);
+//   const[data,setData] = useState([]);
+//   const [error, setError] = useState("");
+
+//   async function getData(){
+//     setLoading(true);
+//     setError("");
+//     try{
+      
+//       const response = await fetch(url);
+//       if (!response.ok) {
+//         throw new Error(`HTTP Error: ${response.status}`);
+//       }
+//       const d = await response.json();
+//       setData(d)
+
+//     }catch(e){
+//       setError(e);
+//     }finally{
+//       setLoading(false);
+//     }
+     
+//   }
+//   useEffect(()=>{
+//     getData();
+//   },[url])
+
+//   return{
+//     data,
+//     loading,
+//     error
+//   };
+  
+// }
+
+// function GetUsers(){
+//   const url = "https://jsonplaceholder.typicode.com/users";
+//   const {data, loading, error}= useFetch(url);
+
+//   return(
+//     <div>
+//       <h2>Fetch Data</h2>
+
+//             {loading && <p>Loading...</p>}
+
+//             {error && <p>{error}</p>}
+
+//             {!loading && !error && data.length === 0 && (
+//                 <p>No User found</p>
+//             )}
+
+//             {!loading && !error && data.length > 0 && (
+//               data.map(user => (
+//                 <div key={user.id}>
+//                   <hr/>
+//                     <h3>Name: {user.name}</h3>
+//                     <h4>Email: {user.email}</h4>
+                  
+//                     <hr/>
+//                 </div>
+                
+//             )))}
+            
+//     </div>
+//   )
+// }
+// function GetPosts() {
+//     const url = "https://jsonplaceholder.typicode.com/posts";
+
+//     const { data, loading, error } = useFetch(url);
+
+//     return (
+//         <div>
+//             <h2>Fetch Data</h2>
+
+//             {loading && <p>Loading...</p>}
+
+//             {error && <p>{error}</p>}
+
+//             {!loading && !error && data.length === 0 && (
+//                 <p>No posts found</p>
+//             )}
+
+//             {!loading && !error && data.length > 0 && (
+//               data.map(post => (
+//                 <div key={post.id}>
+//                     <h3>{post.title}</h3>
+//                     <p>{post.body}</p>
+//                 </div>
+//             )))}
+//         </div>
+//     );
+// }
+
+// function useCounter(){
+//   const [count, setCount] = useState(0);
+
+//   function increase(){
+//     setCount(prev => prev+1);
+//   }
+//   function decrease(){
+//     setCount(prev => prev -1);
+//   }
+
+//   return{
+//     count,
+//     increase,
+//     decrease
+//   }
+// }
+
+// function Counter(){
+//   const {count, increase, decrease} = useCounter();
+
+//   return(
+//     <div>
+//       <h2>Count: {count}</h2>
+//       <button onClick={increase}>Increase +</button>
+//       <button onClick={decrease}>Descrease -</button>
+//     </div>
+//   )
+// }
+
+// function App(){
+//   return(
+//     <div>
+//       <h1>Custom Hook Demo</h1>
+
+//       <GetUsers />
+//     </div>
+//   )
+// }
 
 
 

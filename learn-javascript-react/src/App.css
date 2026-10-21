@@ -182,3 +182,13 @@
     border-right-color: var(--border);
   }
 }
+
+.active-link {
+    font-weight: bold;
+    color:rgb(151, 109, 119);
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
